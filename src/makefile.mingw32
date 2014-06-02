@@ -1,0 +1,28 @@
+#v1.0 copyright Comine.com 20140602M1514
+#
+#
+OUTPUT=MUnits.exe
+CC=g++
+COMPARGS= 
+LINKARGS= -lgdi32 -luser32 -lkernel32
+
+
+####################################################
+all :
+	$(CC) *.cpp -o $(OUTPUT) $(COMPARGS) $(LINKARGS) 
+	
+
+
+####################################################
+clean:
+	-rm -f *.o
+	-rm -f $(OUTPUT)
+
+
+
+####################################################
+cleanall:
+	-rm -f *.o
+	-rm -f $(OUTPUT)
+
+

@@ -1,0 +1,28 @@
+#v1.0 copyright Comine.com 20140602M1514
+#
+#
+OUTPUT=MUnits.exe
+CC=g++
+COMPARGS= -Iinclude  # -D_DEBUG  -g 
+LINKARGS=   
+
+
+####################################################
+all :
+	$(CC) $(COMPARGS) $(LINKARGS) *.cpp -o $(OUTPUT)
+	
+
+
+####################################################
+clean:
+	-rm -f *.o
+	-rm -f $(OUTPUT)
+
+
+
+####################################################
+cleanall:
+	-rm -f *.o
+	-rm -f $(OUTPUT)
+
+

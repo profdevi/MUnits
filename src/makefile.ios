@@ -1,0 +1,28 @@
+#v1.0 copyright Comine.com 20140602M1514
+#
+#
+OUTPUT=MUnits.exe
+CC=g++
+COMPARGS=  -Iinclude -lObjC -framework Foundation -framework CoreLocation  # -D_DEBUG  -g 
+LINKARGS=   
+
+
+####################################################
+all :
+	$(CC) $(COMPARGS) $(LINKARGS) *.mm *.cpp  -o $(OUTPUT)
+	
+
+
+####################################################
+clean:
+	-rm -f *.o
+	-rm -f $(OUTPUT)
+
+
+
+####################################################
+cleanall:
+	-rm -f *.o
+	-rm -f $(OUTPUT)
+
+
