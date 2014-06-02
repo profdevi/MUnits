@@ -11,7 +11,8 @@ Build with Visual Studio
 Switch to the src directory and compile with nmake
 
 > cd src
-> nmake
+
+> nmake -f makefile.windows
 
 
 Build on Linux
@@ -19,6 +20,7 @@ Build on Linux
 Switch to the src directory and compile with nmake
 
 > $ cd src
+
 > $ make -f makefile.unix
 
 
