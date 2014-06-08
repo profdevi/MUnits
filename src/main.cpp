@@ -1,4 +1,4 @@
-//v1.0 copyright Comine.com 20140602M1342
+//v1.1 copyright Comine.com 20140608U1246
 #include "MStdLib.h"
 #include "MCommandArg.h"
 #include "MUnitConverter.h"
@@ -8,7 +8,7 @@
 //* Module Elements
 //******************************************************
 static const char *GApplicationName="MUnits";	// Used in Help
-static const char *GApplicationVersion="1.0";	// Used in Help
+static const char *GApplicationVersion="1.1";	// Used in Help
 
 ////////////////////////////////////////////////////
 static void GDisplayHelp(void);
@@ -465,6 +465,95 @@ int main(int argn,const char *argv[])
 		return 0;
 		}
 
+	// kev  :  Kelvin to eV
+	if(args.CheckRemoveArg("kev")==true)
+		{
+		const int argcount=args.GetArgCount();
+		for(int i=1;i<argcount;++i)
+			{
+			double val = MStdAToF(args.GetArg(i) );
+			
+			if(verbose==true) {  MStdPrintf("%gK=",val);  }
+			
+			MStdPrintf("%g",conv.KelvinToElectronVolts(val ) );
+			
+			if(verbose==true) { MStdPrintf("eV");  }
+			
+			MStdPrintf("\t");
+			}
+		
+		MStdPrintf("\n");
+		return 0;
+		}
+
+	// kev  :  Kelvin to Joules
+	if(args.CheckRemoveArg("kj")==true)
+		{
+		const int argcount=args.GetArgCount();
+		for(int i=1;i<argcount;++i)
+			{
+			double val = MStdAToF(args.GetArg(i) );
+			
+			if(verbose==true) {  MStdPrintf("%gK=",val);  }
+			
+			MStdPrintf("%g",conv.KelvinToJoules(val ) );
+			
+			if(verbose==true) { MStdPrintf("J");  }
+			
+			MStdPrintf("\t");
+			}
+		
+		MStdPrintf("\n");
+		return 0;
+		}
+
+
+	// kev  :  Kelvin to inv cm
+	if(args.CheckRemoveArg("kcm")==true)
+		{
+		const int argcount=args.GetArgCount();
+		for(int i=1;i<argcount;++i)
+			{
+			double val = MStdAToF(args.GetArg(i) );
+			
+			if(verbose==true) {  MStdPrintf("%gK=",val);  }
+			
+			MStdPrintf("%g",conv.KelvinToInvCentimeters(val ) );
+			
+			if(verbose==true) { MStdPrintf("invcm");  }
+			
+			MStdPrintf("\t");
+			}
+		
+		MStdPrintf("\n");
+		return 0;
+		}
+
+	// kev  :  Kelvin to ha
+	if(args.CheckRemoveArg("kha")==true)
+		{
+		const int argcount=args.GetArgCount();
+		for(int i=1;i<argcount;++i)
+			{
+			double val = MStdAToF(args.GetArg(i) );
+			
+			if(verbose==true) {  MStdPrintf("%gK=",val);  }
+			
+			MStdPrintf("%g",conv.KelvinToHartrees(val ) );
+			
+			if(verbose==true) { MStdPrintf("Ha");  }
+			
+			MStdPrintf("\t");
+			}
+		
+		MStdPrintf("\n");
+		return 0;
+		}
+
+
+
+
+
 	GDisplayHelp();
 	return 0;
 	}
@@ -493,6 +582,8 @@ static void GDisplayHelp(void)
 				"     evha :  eV to hartrees            evk  :  Elevtron Volts to Kelvin\n"  
                 "     atfs :  atomic Unit Time to fs    fsat :  fs time to atomic unit time\n"
 				"     boan :  Bohr to Angstromes        anbo :  Angstromes to Bohr\n"
+				"     kev  :  Kelvin to eV              kj   :  Kelvin to Joules\n"
+				"     kcm  :  Kelvin to inv cm          kha  :  Kelvin to Hartrees\n"
 				"\n"
 				,GApplicationName,GApplicationVersion);
 	}

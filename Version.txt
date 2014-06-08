@@ -1,3 +1,22 @@
 
-v1.0 MUnits : WUC++ Converts common units in Quantum Mechanical Simulations
+   usage:  MUnits <conv> <value>+ [-?|-v]
+           v1.1 copyright Comine.com
+
+   Program will convert a given value from one unit type to another
+   convertion type.  The -v flag will give a verbose output.
+
+   Convertion: 
+
+     cmha :  inv cm to Hartree         cmev :  inv cm to Electron Volts
+     cmj  :  inv cm to Joules          cmk  :  inv cm to Kelvin 
+     hacm :  Hartree to inv cm         haev :  Hartree to Electron Volts
+     haj  :  Hartree to Joules         hak  :  Hartree to Kelvin 
+     jcm  :  Joules to inv cm          jev  :  Joules to to Electron Volts
+     jha  :  Joules to Hartrees        jk   :  Joules to Kelvin 
+     evcm :  eV to inv cm              evj  :  Elevtron Volts to Joules
+     evha :  eV to hartrees            evk  :  Elevtron Volts to Kelvin
+     atfs :  atomic Unit Time to fs    fsat :  fs time to atomic unit time
+     boan :  Bohr to Angstromes        anbo :  Angstromes to Bohr
+     kev  :  Kelvin to eV              kj   :  Kelvin to Joules
+     kcm  :  Kelvin to inv cm          kha  :  Kelvin to Hartrees
 
