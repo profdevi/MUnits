@@ -1,4 +1,4 @@
-//v0.0 copyright Comine.com 20050914W09
+//v1.1 copyright Comine.com 20140614S1951
 #include "MStdLib.h"
 #include "MUnits.h"
 #include "MUnitConverter.h"
@@ -65,11 +65,17 @@ double MUnitConverter::JoulesToInvCentimeters(const double &val)
 	}
 
 
-
 ////////////////////////////////////////////////
 double MUnitConverter::JoulesToKelvin(const double &val)
 	{
 	return val/MUNITS_BOLTZMANN_CONSTANT;
+	}
+
+
+/////////////////////////////////////////////////
+double MUnitConverter::JoulesToKCalMole(const double &val)
+	{
+	return val/MUNITS_KILOCAL_PER_MOLE;	
 	}
 
 
@@ -104,6 +110,13 @@ double MUnitConverter::ElectronVoltsToKelvin(const double &val)
 
 
 ////////////////////////////////////////////////
+double MUnitConverter::ElectronVoltsToKCalMole(const double &val)
+	{
+	return val*MUNITS_ELECTRONVOLT/MUNITS_KILOCAL_PER_MOLE;
+	}
+
+
+////////////////////////////////////////////////
 double MUnitConverter::HartreesToElectronVolts(const double &val)
 	{
 	return val*(MUNITS_HARTREE/MUNITS_ELECTRONVOLT);
@@ -127,21 +140,28 @@ double MUnitConverter::HartreesToInvCentimeters(const double &val)
 ////////////////////////////////////////////////
 double MUnitConverter::HartreesToKelvin(const double &val)
 	{
-	return val*MUNITS_HARTREE/MUNITS_BOLTZMANN_CONSTANT;
+	return val*(MUNITS_HARTREE/MUNITS_BOLTZMANN_CONSTANT);
+	}
+
+
+/////////////////////////////////////////////////
+double MUnitConverter::HartreeToKCalMole(const double &val)
+	{
+	return val*(MUNITS_HARTREE/MUNITS_KILOCAL_PER_MOLE);	
 	}
 
 
 ////////////////////////////////////////////////
 double MUnitConverter::KelvinToElectronVolts(const double &val)
 	{
-	return val*MUNITS_BOLTZMANN_CONSTANT/MUNITS_ELECTRONVOLT;
+	return val*(MUNITS_BOLTZMANN_CONSTANT/MUNITS_ELECTRONVOLT);
 	}
 
 
 ////////////////////////////////////////////////
 double MUnitConverter::KelvinToHartrees(const double &val)
 	{
-	return val*MUNITS_BOLTZMANN_CONSTANT/MUNITS_HARTREE;
+	return val*(MUNITS_BOLTZMANN_CONSTANT/MUNITS_HARTREE);
 	}
 
 
@@ -156,6 +176,13 @@ double MUnitConverter::KelvinToInvCentimeters(const double &val)
 double MUnitConverter::KelvinToJoules(const double &val)
 	{
 	return val*MUNITS_BOLTZMANN_CONSTANT;
+	}
+
+
+////////////////////////////////////////////////
+double MUnitConverter::KelvinToKCalMole(const double &val)
+	{
+	return val*(MUNITS_BOLTZMANN_CONSTANT/MUNITS_KILOCAL_PER_MOLE);
 	}
 
 
@@ -181,11 +208,52 @@ double MUnitConverter::InvCentimetersToKelvin(const double &val)
 	}
 
 
-
 ////////////////////////////////////////////////
 double MUnitConverter::InvCentimetersToJoules(const double &val)
 	{
 	return MUnitsWaveNumberToEnergy(val);
+	}
+
+
+/////////////////////////////////////////////////
+double MUnitConverter::InvCentimetersToKCalMole(const double &val)
+	{
+	return MUnitsWaveNumberToEnergy(val)/MUNITS_KILOCAL_PER_MOLE;
+	}
+
+
+/////////////////////////////////////////////////
+double MUnitConverter::KCalMoleToElectronVolts(const double &val)
+	{
+	return (MUNITS_KILOCAL_PER_MOLE/MUNITS_ELECTRONVOLT)*val;
+	}
+
+
+/////////////////////////////////////////////////
+double MUnitConverter::KCalMoleToHartrees(const double &val)
+	{
+	return (MUNITS_KILOCAL_PER_MOLE/MUNITS_HARTREE)*val;	
+	}
+
+
+/////////////////////////////////////////////////
+double MUnitConverter::KCalMoleToKelvin(const double &val)
+	{
+	return (MUNITS_KILOCAL_PER_MOLE/MUNITS_BOLTZMANN_CONSTANT)*val;	
+	}
+
+
+/////////////////////////////////////////////////
+double MUnitConverter::KCalMoleToJoules(const double &val)
+	{
+	return MUNITS_KILOCAL_PER_MOLE * val;
+	}
+
+
+/////////////////////////////////////////////////
+double MUnitConverter::KCalMoleToInvCentimeter(const double &val)
+	{
+	return MUnitsEnergyToWaveNumber(val*MUNITS_KILOCAL_PER_MOLE);
 	}
 
 
