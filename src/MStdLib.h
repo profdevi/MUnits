@@ -1,4 +1,4 @@
-//v1.53 copyright Comine.com 20140518U0936
+//v1.54 copyright Comine.com 20140617T0120
 #ifndef MStdLib_h
 #define MStdLib_h
 
@@ -272,6 +272,7 @@ int MStdFromHex(char ch);
 char MStdToLower(char ch);
 char MStdToUpper(char ch);
 bool MStdIsNan(double val);								// Check if float is Not A Number
+bool MStdIsFinite(double val);							// Check if number is finite
 
 ////////////////////////////////////////////////////
 // Wide Char Functions
